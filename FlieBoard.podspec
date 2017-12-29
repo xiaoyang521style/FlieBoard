@@ -15,9 +15,9 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ZXYShineButton"
-  s.version      = "1.1.2"
-  s.summary      = "an Animate Button view on iOS."
+  s.name         = "FlieBoard"
+  s.version      = "1.1.4"
+  s.summary      = "an Animate on iOS."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { :git => "https://github.com/xiaoyang521style/ZXYShineButton.git", :tag => "1.1.2" }
+  s.source = { :git => "https://github.com/xiaoyang521style/FlieBoard.git", :tag => "1.1.4" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,9 +89,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "ZXYShineButton", "ZXYShineButton/*.{h,m}"
+  s.source_files  = "ZYFlipViewController", "ZYFlipViewController/*.{h,m}"
 
-  s.resources = "ZXYShineButton/*.{bundle}"
   #s.public_header_files = "ZXYShineButton/*.h"
 
 
