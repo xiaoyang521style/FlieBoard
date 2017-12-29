@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "FlieBoard"
-  s.version      = "1.1.4"
+  s.version      = "1.1.5"
   s.summary      = "an Animate on iOS."
 
   # This description is used to generate tags and improve search results.
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source = { :git => "https://github.com/xiaoyang521style/FlieBoard.git", :tag => "1.1.4" }
+  s.source = { :git => "https://github.com/xiaoyang521style/FlieBoard.git", :tag => "1.1.5" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +91,6 @@ Pod::Spec.new do |s|
 
   s.source_files  = "ZYFlipViewController", "ZYFlipViewController/*.{h,m}"
 
-  #s.public_header_files = "ZXYShineButton/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
