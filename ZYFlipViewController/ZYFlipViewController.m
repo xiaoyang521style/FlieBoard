@@ -6,12 +6,12 @@
 //  Copyright © 2017年 ios1. All rights reserved.
 //
 
-//#define NotificationCenterPost(__NAME__,__OBJ__,__UserInfo__)  [[NSNotificationCenter defaultCenter]postNotificationName:__NAME__ object:__OBJ__ userInfo:__UserInfo__]
 
 
 #import "ZYFlipViewController.h"
 #import "ZYFlipHeardView.h"
 #import <AudioToolbox/AudioToolbox.h>
+#include <math.h>
 typedef NS_ENUM(NSInteger, ZYViewAnimationDirection) {
    ZYViewAnimationDirectionBackward = -1,
    ZYViewAnimationDirectionNone = 0,
@@ -152,8 +152,6 @@ static dispatch_queue_t pageFlipDelayQueue;
                         if (_isAnimation) {
                             return;
                         }
-                
-                        //NotificationCenterPost(NOTIFICATION_FlipAction, @"yes", nil);
                         [self.delegate flipWillDoAction];
                         self.direction = ZYViewAnimationDirectionBackward;
                         [self setNextOfViewOfIndex:self.currentIndex - 1];
@@ -162,7 +160,6 @@ static dispatch_queue_t pageFlipDelayQueue;
                             return;
                         }
                             [self.delegate flipWillDoAction];
-                           // NotificationCenterPost(NOTIFICATION_FlipAction, @"yes", nil);
                         self.direction = ZYViewAnimationDirectionForward;
                         [self setNextOfViewOfIndex:self.currentIndex +1];
                     }
@@ -194,7 +191,7 @@ static dispatch_queue_t pageFlipDelayQueue;
                       [self updateInteractiveTransition:0];
                     return;
                 }
-                percent = fabsf(percent);
+                    percent = fabs(percent);
                 percent = MIN(1.0, MAX(0.0, percent));
                 [self updateInteractiveTransition:percent];
                 CGPoint location = [gestureRecognizer locationInView:self.view];

@@ -18,6 +18,7 @@
 		6A3CFF341FF5E30700472D62 /* ZYFlipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3CFF311FF5E30600472D62 /* ZYFlipViewController.m */; };
 		6A3CFF381FF5E37200472D62 /* ZYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3CFF371FF5E37200472D62 /* ZYDetailViewController.m */; };
 		6A3CFF3B1FF5E43800472D62 /* ZYFlipHeardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3CFF3A1FF5E43800472D62 /* ZYFlipHeardView.m */; };
+		6A3CFF3E1FF5ECA100472D62 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A3CFF3D1FF5ECA100472D62 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		6A3CFF371FF5E37200472D62 /* ZYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYDetailViewController.m; sourceTree = "<group>"; };
 		6A3CFF391FF5E43800472D62 /* ZYFlipHeardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYFlipHeardView.h; sourceTree = "<group>"; };
 		6A3CFF3A1FF5E43800472D62 /* ZYFlipHeardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYFlipHeardView.m; sourceTree = "<group>"; };
+		6A3CFF3D1FF5ECA100472D62 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A3CFF3E1FF5ECA100472D62 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +98,7 @@
 				6A3CFF0F1FF5DD8100472D62 /* FlieBoard- ExampleTests */,
 				6A3CFF1A1FF5DD8100472D62 /* FlieBoard- ExampleUITests */,
 				6A3CFEF51FF5DD8100472D62 /* Products */,
+				6A3CFF3C1FF5ECA100472D62 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +157,14 @@
 				6A3CFF311FF5E30600472D62 /* ZYFlipViewController.m */,
 			);
 			path = ZYFlipViewController;
+			sourceTree = "<group>";
+		};
+		6A3CFF3C1FF5ECA100472D62 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A3CFF3D1FF5ECA100472D62 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
