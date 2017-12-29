@@ -136,8 +136,7 @@ static dispatch_queue_t pageFlipDelayQueue;
 
     /**手势状态*/
    UIGestureRecognizerState state = [gestureRecognizer state];
-     CGPoint translation = [gestureRecognizer translationInView:self.view];
-   // NSLog(@"%lf",ABS(translation.y) - ABS(translation.x));
+   CGPoint translation = [gestureRecognizer translationInView:self.view];
 
         switch (state) {
             case UIGestureRecognizerStateBegan:
@@ -146,8 +145,6 @@ static dispatch_queue_t pageFlipDelayQueue;
                 if (ABS(translation.y) - ABS(translation.x)>= 0) {
                     CGPoint velocity = [gestureRecognizer velocityInView:self.view];
                     BOOL isDownwards = (velocity.y > 0);
-                    NSLog(@"开始");
-                    //[[Context get]playFlieBoard];
                     if (isDownwards) {
                         if (_isAnimation) {
                             return;
@@ -179,7 +176,6 @@ static dispatch_queue_t pageFlipDelayQueue;
                 if (ABS(translation.y) - ABS(translation.x)<= 0) {
                     return;
                 }
-                NSLog(@"变化");
                 CGRect viewRect = self.view.bounds;
                 CGPoint translation = [gestureRecognizer translationInView:self.view];
                 CGFloat percent = (double)translation.y / (double)viewRect.size.height;
@@ -191,12 +187,12 @@ static dispatch_queue_t pageFlipDelayQueue;
                       [self updateInteractiveTransition:0];
                     return;
                 }
-                    percent = fabs(percent);
+                percent = fabs(percent);
                 percent = MIN(1.0, MAX(0.0, percent));
                 [self updateInteractiveTransition:percent];
                 CGPoint location = [gestureRecognizer locationInView:self.view];
-                CGFloat absY = fabs(location.y);
-                CGFloat oldAbsY = fabs(oldLocation.y);
+                double absY = fabs(location.y);
+                double oldAbsY = fabs(oldLocation.y);
                 if (absY -oldAbsY < 0) {
                     _isUp = YES;
                     //向上滑动
@@ -216,10 +212,8 @@ static dispatch_queue_t pageFlipDelayQueue;
                 if (_isEnd || !_isAnimation) {
                     return;
                 }
-                 NSLog(@"结束");
                 if (!_isChange) {
                     [self.delegate flipDidAction];
-                    // NotificationCenterPost(NOTIFICATION_FlipAction, @"no", nil);
                 }
                 _isEnd = YES;
                 _isChange =YES;
@@ -310,8 +304,6 @@ static dispatch_queue_t pageFlipDelayQueue;
         self.nextUpperView = [self createUpperHalf: self.nextView];
         self.nextBottomView = [self createBottomHalf: self.nextView];
 
-  
-        
         self.nextUpperShadow  = [[UIView alloc] initWithFrame:self.nextUpperView.frame];
         self.nextUpperShadow.backgroundColor = [UIColor blackColor];
         
@@ -355,16 +347,9 @@ static dispatch_queue_t pageFlipDelayQueue;
             [self.containerView insertSubview:self.nextBottomShadow aboveSubview:self.currentBottomView];
             [self.containerView insertSubview:self.nextUpperShadow belowSubview:self.currentUpperView];
             [self.containerView insertSubview: self.nextBottomShadow aboveSubview:self.nextBottomShadow];
-            
-            
         }
-        
-     
-        
     }
        [self.currentVC.view removeFromSuperview];
- 
-   
 }
 
 
